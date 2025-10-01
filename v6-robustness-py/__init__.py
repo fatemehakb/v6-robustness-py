@@ -34,26 +34,6 @@ def central_sensitivity_analysis(client: AlgorithmClient, target_column: str, ag
     results = client.wait_for_results(task.get("id"))
     info("Node results received!")
 
-    """"
-    
-    # Initialize aggregated counters
-    aggregated_changes = {}
-    total_samples = 0
-
-
-    # Sum changes for each delta across nodes
-    for node_result in results:
-        total_samples += node_result["n_samples"]
-        for delta, count in node_result["age_sensitivity"].items():
-            aggregated_changes[delta] = aggregated_changes.get(delta, 0) + count
-            
-            
-    # Compute percentages
-    aggregated_percentages = {
-        delta: (count / total_samples) * 100 for delta, count in aggregated_changes.items()
-    }
-            
-    """
     
     
     
@@ -124,22 +104,6 @@ def local_sensitivity_analysis(df: pd.DataFrame, target_column: str, age_column:
     n_test_samples=int(len(baseline_preds))
     info(f"n_test_samples={n_test_samples:.3f}")
     
-    """""
-    perturbations = [1]  # [-5, -4, ..., 5]
-    changes = {}
-    
-
-    for delta in perturbations:
-        X_perturbed = X_test.copy()
-        if age_column in X_perturbed.columns:
-            X_perturbed[age_column] = X_perturbed[age_column] + delta
-            perturbed_preds = model.predict(X_perturbed)
-            # count how many predictions changed
-            n_changed = (perturbed_preds != baseline_preds).sum()
-            changes[delta] = int(n_changed)
-            info(f"-----changes[delta] = {n_changed:.3f}")
-
-    """
     
     info(f"local__delta: {delta}")
 
