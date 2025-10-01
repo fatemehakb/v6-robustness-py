@@ -20,7 +20,7 @@ python example.py
 
 ------------------------------------------------------------------
 
-The main algorithm is implemented in v6-robustness-py/__init__.py and provides two key functions:
+The main algorithm is implemented in v6-robustness-py/_ _init__.py and provides two key functions:
 
 # 1. local_sensitivity_analysis
 
