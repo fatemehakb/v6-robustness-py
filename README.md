@@ -7,12 +7,15 @@ It measures how changes in a feature (e.g., age_column) affect model predictions
 Clone the repository and install in editable mode:
 
 git clone https://github.com/fatemehakb/v6-robustness-py.git
+
 cd v6-robustness-py-main
+
 pip install -e .
 
 
 # Usage: Run an Example
 cd v6-robustness-py
+
 python example.py
 
 ------------------------------------------------------------------
