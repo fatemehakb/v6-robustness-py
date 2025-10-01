@@ -36,23 +36,7 @@ print("Organizations in mock client:", org_ids)
 # ---------------------------------------------------------------------
 # This will execute partial_average() on each organization
 
-"""""
-partial_task = client.task.create(
-    input_={
-        "method": "local_sensitivity_analysis",   # function name in __init__.py
-        "kwargs": {
-            "target_column": "survival",
-            "age_column": "age",      # must match column in your CSV
-            "delta": -10
-        }
-    },
-    organizations=org_ids              # send to all orgs
-)
 
-partial_results = client.result.get(partial_task.get("id"))
-print("Partial results:", partial_results)
-
-"""
 
 # ---------------------------------------------------------------------
 # Test CENTRAL method
@@ -66,7 +50,7 @@ central_task = client.task.create(
         "kwargs": {
             "target_column": "survival",
             "age_column": "age",      # must match column in your CSV
-            "delta": -15
+            "delta": 5
         }
     },
     organizations=[org_ids[0]]         # central only needs one org to coordinate
