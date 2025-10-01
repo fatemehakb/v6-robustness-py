@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: v6-robustness-py
+Version: 1.0.0
+Summary: vantage6 robustness
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: vantage6-algorithm-tools
+Requires-Dist: pandas
+
+This is my vantage6 algorithm package to check robustness.
